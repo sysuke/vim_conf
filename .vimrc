@@ -168,82 +168,8 @@ function! s:ExecPy()
 command! Exec call <SID>ExecPy()
 autocmd FileType python map <silent> <c-p> :call <SID>ExecPy()<CR>
 
-"---------------------------------------
-" Unite: {{{2
-
-let g:unite_enable_start_insert = 1
-let g:unite_enable_split_vertically = 1
-if globpath(&rtp, 'plugin/unite.vim') != ''
-  nnoremap ,u  :<C-u>Unite
-  nnoremap ,us :<C-u>Unite colorscheme<CR>
-  nnoremap ,uf :<C-u>Unite file file_mru buffer<CR>
-  nnoremap ,ul :<C-u>Unite line<CR>
-  nnoremap ,ud :<C-u>Unite directory_mru<CR>
-endif
-
-let s:source = {
-      \ "name" : "kaomozi",
-      \ "counter" : 0
-      \ }
-call unite#define_source(s:source)
-
-function! s:source.async_gather_candidates(args, context)
-  let a:context.source.unite__cached_candidates = []
-  let anim = [
-        \ "(´･_･`)",
-        \ "( ´･_･)",
-        \ "(  ´･_)",
-        \ "(   ´･)",
-        \ "(    ´)",
-        \ "(      )",
-        \ "(      )",
-        \ "(`     )",
-        \ "(･`    )",
-        \ "(_･`   )",
-        \ "(･_･`  )",
-        \ ]
-  let list = [ anim[self.counter % len(anim)] ]
-  let self.counter += 1
-
-  return map(list, '{"word" : v:val}')
-endfunction
-
-call unite#define_source(s:source)
-unlet s:source
-
-let s:source = {
-      \ "name" : "kaomozi2",
-      \ "counter" : 0
-      \ }
-
-call unite#define_source(s:source)
-
-function! s:source.async_gather_candidates(args, context)
-  let a:context.source.unite__cached_candidates = []
-
-  let anim = [
-        \ "(´･_･`)",
-        \ "( ´･_･)",
-        \ "(  ´･_)",
-        \ "(   ´･)",
-        \ "(    ´)",
-        \ "(      )",
-        \ "(      )",
-        \ "(`     )",
-        \ "(･`    )",
-        \ "(_･`   )",
-        \ "(･_･`  )",
-        \ ]
-  let self.counter += 1
-
-  return map(range(20), '{"word" : anim[(self.counter+v:val) % len(anim)]}')
-endfunction
-
-call unite#define_source(s:source)
-unlet s:source
-
-" :Unite kaomoji[2] -cursor-line-highlight=Normal -update-time=50
-
-"}}}2
+"tag jump
+"
+set tags=tags;
 
 

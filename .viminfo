@@ -8,7 +8,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # 最後の 検索パターン:
-~MSle0~/MP
+~MSle0~/I
 
 # 最後の Substitute 検索パターン:
 ~MSle0&LOGI
@@ -17,29 +17,38 @@
 $
 
 # コマンドライン 項目の履歴 (新しいものから古いものへ):
-:q
-:q!
 :x
+:q
+:w
+:NERDTree
+:712
 ::vnew
 :e .
 :e
 :Sex
 :S
 :aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-:NERDTree
-:w
 :vsp
 :setAudio
 :e 205.html
 :new
 :vnew
+:q!
 :e share/temp/iyuuya-vim-config-fe94367/.vimrc
 :e ../../../.vimrc
 :e ../../.vimrc
-:snew
 
 # 検索文字列 項目の履歴 (新しいものから古いものへ):
 ? \s\+$
+?//
+?/I//
+?/ctags
+?/tags
+?/txt
+?/*.txt
+?/Video
+?/Video*txt
+?/mdat
 ?/MP
 ?/setvideo
 ?/Aw
@@ -50,15 +59,6 @@ $
 ?/iswin
 ?/ 
 ?/sta
-?/statis
-?/kaomozi
-?/kaomoji
-?/vimrc
-?/vimr
-?/show
-?/?
-?/iptable
-?/hl
 
 # 式 項目の履歴 (新しいものから古いものへ):
 
@@ -69,155 +69,224 @@ $
 # 入力行 項目の履歴 (新しいものから古いものへ):
 
 # レジスタ:
-""0	CHAR	0
-	/
-"1	LINE	0
+"0	CHAR	0
+	configuration file for vim
 	
+""1	LINE	0
+	"}}}2
 "2	LINE	0
 	
 "3	LINE	0
-	  \ '( ´◉◞౪◟◉)',
+	" :Unite kaomoji[2] -cursor-line-highlight=Normal -update-time=50
 "4	LINE	0
-	  \ '( ´◉◞౪◟◉)',
+	
 "5	LINE	0
-	  \ '(`◉◉ ;    )',
+	unlet s:source
 "6	LINE	0
-	  \ '( ´◉◞౪◟◉)',
-	  \ '(д `;   )']
+	call unite#define_source(s:source)
 "7	LINE	0
-	  \ '(` ;    )',
+	
 "8	LINE	0
-	  \ '( ;     )',
+	endfunction
 "9	LINE	0
-	  \ '(;      )',
+	  return map(range(20), '{"word" : anim[(self.counter+v:val) % len(anim)]}')
 "-	CHAR	0
 	/
 
 # ファイルマーク:
 'D  79  6  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/codecs/mp3dec/SoftMP3.cpp
-'0  1  0  ~/examples.desktop
-'1  42  0  ~/.vimrc
-'2  74  0  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/AwesomePlayer.cpp
-'3  107  2  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/NERD_tree_1
-'4  1  0  ~/.vim/plugin/hahhah.vim
-'5  36  25  ~/.vim/plugin/hahhah.vim
-'6  73  28  ~/.vimrc
-'7  40  0  ~/.vim/plugin/hahhah.vim
-'8  83  0  ~/.vimrc
-'9  68  0  ~/.vimrc
+'0  24  0  ~/.vim/plugin/hahhah.vim
+'1  31  9  ~/.vim/plugin/hahhah.vim
+'2  196  0  ~/android/ga500ICS-is2m1-0329/android/frameworks/base/media/libstagefright/AACExtractor.cpp
+'3  17658  44  ~/share/tree.txt
+'4  173  8  ~/.vimrc
+'5  94  1  ~/android/ga500ICS-is2m1-0329/android/tags
+'6  1  0  ~/android/ga500ICS-is2m1-0329/tags
+'7  1  0  ~/android/ga500ICS-is2m1/t
+'8  272  8  ~/android/ga500ICS-is2m1-0329/android/frameworks/base/media/libstagefright/AACExtractor.cpp
+'9  83  0  ~/android/ga500ICS-is2m1-0329/android/tags
 
 # ジャンプリスト (新しいものが先):
--'  1  0  ~/examples.desktop
--'  42  0  ~/.vimrc
--'  1  0  ~/.vimrc
--'  74  0  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/AwesomePlayer.cpp
--'  49  2  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/NERD_tree_1
--'  11  0  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/NERD_tree_1
--'  68  2  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/NERD_tree_1
--'  1  0  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/NERD_tree_1
--'  1  0  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/AwesomePlayer.cpp
--'  107  2  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/NERD_tree_1
--'  145  2  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/NERD_tree_1
--'  163  0  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/AwesomePlayer.cpp
+-'  24  0  ~/.vim/plugin/hahhah.vim
 -'  1  0  ~/.vim/plugin/hahhah.vim
--'  36  25  ~/.vim/plugin/hahhah.vim
--'  24  2  ~/.vim/plugin/hahhah.vim
--'  37  2  ~/.vim/plugin/hahhah.vim
--'  38  2  ~/.vim/plugin/hahhah.vim
--'  73  28  ~/.vimrc
--'  5  0  ~/.vimrc
--'  40  0  ~/.vim/plugin/hahhah.vim
--'  67  32  ~/.vim/plugin/hahhah.vim
--'  66  33  ~/.vim/plugin/hahhah.vim
--'  83  0  ~/.vimrc
--'  68  0  ~/.vimrc
--'  67  0  ~/.vimrc
--'  5  0  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/AwesomePlayer.cpp
--'  503  13  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/AwesomePlayer.cpp
--'  1320  20  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/AwesomePlayer.cpp
--'  1463  20  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/AwesomePlayer.cpp
--'  1464  1  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/AwesomePlayer.cpp
--'  1322  20  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/AwesomePlayer.cpp
--'  1491  9  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/AwesomePlayer.cpp
--'  1487  9  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/AwesomePlayer.cpp
--'  1228  36  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/AwesomePlayer.cpp
--'  1042  9  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/AwesomePlayer.cpp
--'  1028  36  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/AwesomePlayer.cpp
--'  1015  13  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/AwesomePlayer.cpp
--'  970  41  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/AwesomePlayer.cpp
--'  966  9  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/AwesomePlayer.cpp
--'  906  17  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/AwesomePlayer.cpp
--'  605  5  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/AwesomePlayer.cpp
--'  603  9  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/AwesomePlayer.cpp
--'  599  16  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/AwesomePlayer.cpp
--'  559  40  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/AwesomePlayer.cpp
--'  105  6  ~/.vimrc
--'  110  0  ~/.vimrc
--'  109  15  ~/.vimrc
--'  119  4  ~/.vimrc
--'  86  0  ~/.vimrc
--'  234  0  ~/.vimrc
--'  75  0  ~/.vimrc
--'  77  3  ~/.vimrc
--'  3  0  ~/.vimrc
--'  21  6  ~/share/temp/iyuuya-vim-config-fe94367/.vimrc
--'  1  0  ~/share/temp/iyuuya-vim-config-fe94367/.vimrc
--'  2  0  ~/.vimrc
--'  470  0  ~/share/temp/iyuuya-vim-config-fe94367/.vimrc
--'  83  29  ~/share/temp/iyuuya-vim-config-fe94367/.vimrc
--'  51  12  ~/share/temp/iyuuya-vim-config-fe94367/.vimrc
--'  50  28  ~/share/temp/iyuuya-vim-config-fe94367/.vimrc
--'  933  34  ~/share/temp/iyuuya-vim-config-fe94367/.vimrc
--'  818  32  ~/share/temp/iyuuya-vim-config-fe94367/.vimrc
--'  825  18  ~/share/temp/iyuuya-vim-config-fe94367/.vimrc
--'  855  18  ~/share/temp/iyuuya-vim-config-fe94367/.vimrc
--'  885  9  ~/share/temp/iyuuya-vim-config-fe94367/.vimrc
--'  884  0  ~/share/temp/iyuuya-vim-config-fe94367/.vimrc
--'  7  0  ~/share/temp/iyuuya-vim-config-fe94367/.vimrc
--'  179  0  ~/.vimrc
--'  218  2  ~/.vimrc
--'  219  0  ~/.vimrc
--'  212  2  ~/.vimrc
--'  241  0  ~/.vimrc
--'  242  0  ~/.vimrc
--'  240  0  ~/.vimrc
--'  245  0  ~/.vimrc
--'  28  0  ~/.vimrc
--'  26  12  ~/.vimrc
--'  264  3  ~/NERD_tree_1
--'  213  0  ~/NERD_tree_1
--'  285  2  ~/NERD_tree_1
--'  1  0  ~/NERD_tree_1
--'  27  13  ~/.vimrc
--'  349  3  ~/NERD_tree_1
--'  370  2  ~/NERD_tree_1
--'  442  0  ~/NERD_tree_1
--'  463  2  ~/NERD_tree_1
--'  514  13  ~/NERD_tree_1
--'  556  2  ~/NERD_tree_1
--'  813  0  ~/share/temp/iyuuya-vim-config-fe94367/.vimrc
--'  85  1  ~/share/temp/iyuuya-vim-config-fe94367/.vimrc
--'  1057  0  ~/share/temp/iyuuya-vim-config-fe94367/.vimrc
--'  1062  0  ~/share/temp/iyuuya-vim-config-fe94367/.vimrc
--'  1051  0  ~/share/temp/iyuuya-vim-config-fe94367/.vimrc
--'  1036  5  ~/share/temp/iyuuya-vim-config-fe94367/.vimrc
--'  166  0  ~/.vimrc
--'  611  0  ~/share/temp/iyuuya-vim-config-fe94367/.vimrc
--'  204  11  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/MPEG4Extractor.cpp
--'  2  0  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/MPEG2TSWriter.cpp
--'  74  0  ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/AwesomePlayer.cpp
+-'  31  9  ~/.vim/plugin/hahhah.vim
+-'  196  0  ~/android/ga500ICS-is2m1-0329/android/frameworks/base/media/libstagefright/AACExtractor.cpp
+-'  176  2  ~/android/ga500ICS-is2m1-0329/android/frameworks/base/media/libstagefright/AACExtractor.cpp
+-'  179  0  ~/android/ga500ICS-is2m1-0329/android/frameworks/base/media/libstagefright/AACExtractor.cpp
+-'  180  1  ~/android/ga500ICS-is2m1-0329/android/frameworks/base/media/libstagefright/AACExtractor.cpp
+-'  175  0  ~/android/ga500ICS-is2m1-0329/android/frameworks/base/media/libstagefright/AACExtractor.cpp
+-'  50  0  ~/android/ga500ICS-is2m1-0329/android/frameworks/base/include/media/stagefright/AACWriter.h
+-'  182  8  ~/android/ga500ICS-is2m1-0329/android/frameworks/base/media/libstagefright/AACExtractor.cpp
+-'  1  0  ~/android/ga500ICS-is2m1-0329/android/frameworks/base/media/libstagefright/AACExtractor.cpp
+-'  17658  44  ~/share/tree.txt
+-'  17659  3  ~/share/tree.txt
+-'  81  0  ~/android/ga500ICS-is2m1-0329/android/external/chromium/third_party/libjingle/source/talk/examples/call/mucinviterecvtask.h
+-'  46  0  ~/android/ga500ICS-is2m1-0329/android/external/chromium/third_party/libjingle/source/talk/examples/call/mucinviterecvtask.h
+-'  39  6  ~/android/ga500ICS-is2m1-0329/android/frameworks/base/include/media/stagefright/MediaBufferGroup.h
+-'  62  5  ~/android/ga500ICS-is2m1-0329/android/frameworks/base/media/libstagefright/AACExtractor.cpp
+-'  177  8  ~/android/ga500ICS-is2m1-0329/android/frameworks/base/media/libstagefright/AACExtractor.cpp
+-'  173  8  ~/.vimrc
+-'  1  0  ~/.vimrc
+-'  94  1  ~/android/ga500ICS-is2m1-0329/android/tags
+-'  1  0  ~/android/ga500ICS-is2m1-0329/android/tags
+-'  1  0  ~/android/ga500ICS-is2m1-0329/tags
+-'  1  0  ~/android/ga500ICS-is2m1/t
+-'  272  8  ~/android/ga500ICS-is2m1-0329/android/frameworks/base/media/libstagefright/AACExtractor.cpp
+-'  83  0  ~/android/ga500ICS-is2m1-0329/android/tags
+-'  2820  0  ~/android/ga500ICS-is2m1-0329/android/tags
+-'  531  0  ~/android/ga500ICS-is2m1-0329/android/tags
+-'  103  27  ~/.bashrc
+-'  1  0  ~/.bashrc
+-'  14  0  ~/.bashrc
+-'  174  0  ~/.vimrc
+-'  47  0  ~/.vimrc
+-'  52  0  ~/android/ga500ICS-is2m1-0329/android/NERD_tree_1
+-'  142  2  ~/android/ga500ICS-is2m1-0329/android/NERD_tree_1
+-'  1  0  ~/android/ga500ICS-is2m1-0329/android/NERD_tree_1
+-'  1  0  ~/android/ga500ICS-is2m1-0329/android/frameworks/base/media/libstagefright/matroska/MatroskaExtractor.cpp
+-'  836  50  ~/android/ga500ICS-is2m1-0329/android/frameworks/base/media/libstagefright/matroska/MatroskaExtractor.cpp
+-'  336  9  ~/android/ga500ICS-is2m1-0329/android/frameworks/base/media/libstagefright/matroska/MatroskaExtractor.cpp
+-'  128  17  ~/android/ga500ICS-is2m1-0329/android/frameworks/base/media/libstagefright/matroska/MatroskaExtractor.cpp
+-'  2  0  /var/log/syslog
+-'  1  0  /var/log/syslog
+-'  11  8  ~/.viminfo
+-'  1689  26  ~/.viminfo
+-'  1653  8  ~/.viminfo
+-'  1108  8  ~/.viminfo
+-'  1093  17  ~/.viminfo
+-'  781  0  ~/.viminfo
+-'  1  0  ~/.viminfo
+-'  17762  37  ~/share/tree.txt
+-'  17761  41  ~/share/tree.txt
+-'  17757  37  ~/share/tree.txt
+-'  17756  41  ~/share/tree.txt
+-'  17752  37  ~/share/tree.txt
+-'  17751  41  ~/share/tree.txt
+-'  17749  46  ~/share/tree.txt
+-'  17748  46  ~/share/tree.txt
+-'  17746  37  ~/share/tree.txt
+-'  17745  41  ~/share/tree.txt
+-'  17743  44  ~/share/tree.txt
+-'  17741  37  ~/share/tree.txt
+-'  17740  41  ~/share/tree.txt
+-'  17738  44  ~/share/tree.txt
+-'  17736  37  ~/share/tree.txt
+-'  17735  41  ~/share/tree.txt
+-'  17733  44  ~/share/tree.txt
+-'  17731  37  ~/share/tree.txt
+-'  17730  41  ~/share/tree.txt
+-'  17728  44  ~/share/tree.txt
+-'  17726  37  ~/share/tree.txt
+-'  17725  41  ~/share/tree.txt
+-'  17723  44  ~/share/tree.txt
+-'  17721  37  ~/share/tree.txt
+-'  17720  41  ~/share/tree.txt
+-'  17718  44  ~/share/tree.txt
+-'  17716  37  ~/share/tree.txt
+-'  17715  41  ~/share/tree.txt
+-'  17713  44  ~/share/tree.txt
+-'  17711  37  ~/share/tree.txt
+-'  17710  41  ~/share/tree.txt
+-'  17708  44  ~/share/tree.txt
+-'  17706  37  ~/share/tree.txt
+-'  17705  41  ~/share/tree.txt
+-'  17703  44  ~/share/tree.txt
+-'  17701  37  ~/share/tree.txt
+-'  17700  41  ~/share/tree.txt
+-'  17698  44  ~/share/tree.txt
+-'  17696  37  ~/share/tree.txt
+-'  17695  41  ~/share/tree.txt
+-'  17693  44  ~/share/tree.txt
+-'  17691  37  ~/share/tree.txt
+-'  17690  41  ~/share/tree.txt
+-'  17688  44  ~/share/tree.txt
+-'  17686  37  ~/share/tree.txt
+-'  17685  41  ~/share/tree.txt
+-'  17683  44  ~/share/tree.txt
+-'  17681  37  ~/share/tree.txt
+-'  17680  41  ~/share/tree.txt
+-'  17678  44  ~/share/tree.txt
 
 # ファイル内マークの履歴 (新しいものから古いもの):
 
-> ~/examples.desktop
-	"	1	0
+> ~/.vim/plugin/hahhah.vim
+	"	24	0
+	^	31	10
+	.	31	9
+	+	66	0
+	+	67	0
+	+	66	0
+	+	67	32
+	+	18	0
+	+	2	0
+	+	37	6
+	+	37	0
+	+	38	0
+	+	38	0
+	+	36	26
+	+	25	0
+	+	26	0
+	+	27	0
+	+	28	0
+	+	29	0
+	+	30	0
+	+	31	0
+	+	32	0
+	+	33	0
+	+	25	6
+	+	26	7
+	+	27	8
+	+	28	9
+	+	29	10
+	+	30	12
+	+	31	14
+	+	32	16
+	+	33	18
+	+	36	36
+	+	34	0
+	+	35	0
+	+	36	0
+	+	36	26
+	+	36	26
+	+	36	26
+	+	34	20
+	+	35	22
+	+	36	23
+	+	36	26
+	+	36	25
+	+	36	26
+	+	37	0
+	+	36	24
+	+	35	21
+	+	34	18
+	+	33	15
+	+	32	12
+	+	31	9
+
+> ~/android/ga500ICS-is2m1-0329/android/frameworks/base/media/libstagefright/AACExtractor.cpp
+	"	196	0
+	.	196	0
+	+	176	1
+	+	176	0
+	+	196	0
+
+> ~/android/ga500ICS-is2m1-0329/android/frameworks/base/include/media/stagefright/AACWriter.h
+	"	50	0
+
+> /mnt/Certification/Videolist.txt
+	"	15	16
+	^	15	17
+
+> ~/android/ga500ICS-is2m1-0329/android/frameworks/base/include/media/stagefright/MediaBufferGroup.h
+	"	39	6
+
+> ~/android/ga500ICS-is2m1-0329/android/external/chromium/third_party/libjingle/source/talk/examples/call/mucinviterecvtask.h
+	"	46	0
 
 > ~/.vimrc
-	"	42	0
-	^	39	36
-	.	39	36
-	+	94	40
-	+	94	1
+	"	47	0
+	^	173	9
+	.	173	9
 	+	95	0
 	+	100	0
 	+	94	9
@@ -231,8 +300,8 @@ $
 	+	101	1
 	+	101	1
 	+	101	16
-	+	172	0
-	+	177	0
+	+	171	0
+	+	171	0
 	+	25	24
 	+	25	24
 	+	25	0
@@ -258,12 +327,12 @@ $
 	+	27	0
 	+	25	0
 	+	26	12
-	+	224	0
-	+	217	0
-	+	248	0
-	+	221	0
+	+	171	0
+	+	171	0
+	+	171	0
+	+	171	0
 	+	171	39
-	+	183	0
+	+	171	0
 	+	68	0
 	+	70	0
 	+	69	0
@@ -303,7 +372,7 @@ $
 	+	26	0
 	+	27	0
 	+	71	4
-	+	172	9
+	+	171	9
 	+	71	4
 	+	117	4
 	+	117	0
@@ -316,56 +385,27 @@ $
 	+	105	0
 	+	103	33
 	+	39	36
+	+	171	9
+	+	173	9
 	a	27	0
 
-> ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/AwesomePlayer.cpp
-	"	74	0
-	^	428	15
-	.	63	26
-	+	1464	0
-	+	1464	0
-	+	503	12
-	+	474	13
-	+	474	0
-	+	17	1
-	+	63	26
-	n	503	12
+> ~/android/ga500ICS-is2m1-0329/android/tags
+	"	531	0
 
-> ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/NERD_tree_1
-	"	49	2
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
+> ~/android/ga500ICS-is2m1-0329/tags
+	"	1	0
 
-> ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/MPEG4Extractor.cpp
-	"	27	0
-	.	142	0
-	+	1825	79
-	+	1826	0
-	+	1824	64
-	+	19	0
-	+	16	19
-	+	1825	72
-	+	1828	0
-	+	1825	75
-	+	1827	2
-	+	1826	1
-	+	1825	9
-	+	16	1
-	+	320	1
-	+	1824	59
-	+	44	0
-	+	17	0
-	+	1488	0
-	+	142	0
+> ~/android/ga500ICS-is2m1/t
+	"	1	0
 
-> ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/NERD_tree_2
+> ~/.bashrc
+	"	14	0
+	^	103	28
+	.	103	12
+	+	101	9
+	+	103	12
+
+> ~/android/ga500ICS-is2m1-0329/android/NERD_tree_1
 	"	1	0
 	.	1	0
 	+	1	0
@@ -374,16 +414,143 @@ $
 	+	1	0
 	+	1	0
 	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
+
+> ~/android/ga500ICS-is2m1-0329/android/frameworks/base/media/libstagefright/matroska/MatroskaExtractor.cpp
+	"	128	17
+	^	134	2
+	.	389	0
+	+	134	1
+	+	389	0
+
+> /var/log/syslog
+	"	1	0
+
+> ~/.viminfo
+	"	1	0
+
+> ~/share/tree.txt
+	"	17658	44
+	.	17659	0
+	+	17659	0
+
+> /var/log/syslog.1
+	"	1343	0
+
+> /var/log/syslog1
+	"	1	0
+
+> ~/.ssh/id_rsa.pub
+	"	1	0
+
+> ~/gitosis/gitosis-admin/gitosis.conf
+	"	76	14
+	^	78	11
+	.	78	10
+	+	17	46
+	+	18	0
+	+	23	70
+	+	21	0
+	+	19	11
+	+	22	0
+	+	23	38
+	+	20	1
+	+	24	0
+	+	23	8
+	+	23	48
+	+	23	50
+	+	23	45
+	+	23	44
+	+	23	0
+	+	22	11
+	+	23	9
+	+	23	11
+	+	23	6
+	+	5	36
+	+	23	90
+	+	5	0
+	+	79	0
+	+	23	108
+	+	5	10
+	+	18	15
+	+	23	12
+	+	23	11
+	+	5	10
+	+	5	8
+	+	18	19
+	+	23	0
+	+	35	10
+	+	38	10
+	+	59	0
+	+	61	0
+	+	39	0
+	+	45	11
+	+	49	0
+	+	44	0
+	+	46	0
+	+	59	0
+	+	40	6
+	+	45	11
+	+	38	9
+	+	43	11
+	+	48	11
+	+	58	11
+	+	63	11
+	+	55	17
+	+	60	6
+	+	62	15
+	+	63	12
+	+	64	0
+	+	68	11
+	+	65	7
+	+	67	14
+	+	17	0
+	+	10	0
+	+	15	0
+	+	23	0
+	+	11	23
+	+	16	16
+	+	29	23
+	+	11	11
+	+	49	0
+	+	55	19
+	+	69	0
+	+	70	0
+	+	71	0
+	+	70	6
+	+	71	14
+	+	66	14
+	+	61	14
+	+	72	16
+	+	74	0
+	+	79	0
+	+	56	12
+	+	51	13
+	+	46	13
+	+	41	13
+	+	35	0
+	+	29	24
+	+	30	6
+	+	31	37
+	+	33	10
+	+	36	14
+	+	36	14
+	+	24	9
+	+	36	15
+	+	36	16
+	+	36	32
+	+	5	23
+	+	4	24
+	+	7	11
+	+	9	27
+	+	8	10
+	+	9	0
+	+	75	10
+	+	78	10
 
 > ~/work/test/test_cpp.cpp
-	"	17	15
-	^	20	24
-	.	17	7
+	"	16	0
+	^	26	0
+	.	12	0
 	+	1	18
 	+	11	0
 	+	11	0
@@ -428,6 +595,284 @@ $
 	+	26	12
 	+	21	0
 	+	17	7
+	+	10	0
+	+	12	1
+	+	13	12
+	+	16	1
+	+	12	0
+
+> ~/work/test/[quickrun output]
+	"	1	0
+	^	6	0
+	.	3	0
+	+	1	0
+	+	7	0
+	+	5	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	3	0
+
+> ~/work/test/NERD_tree_1
+	"	7	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/work/mine/mineS.c
+	"	1	0
+	^	1	4
+	.	1	4
+	+	1	0
+	+	2	0
+	+	10	6
+	+	1	4
+
+> ~/share/03.21「AVC＿AAC」/10301.txt
+	"	32	0
+	^	32	0
+
+> ~/share/03.21「AVC＿AAC」/1080.txt
+	"	19	9
+
+> ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/MPEG4Extractor.cpp
+	"	389	18
+	^	1418	60
+	.	1418	59
+	+	1821	79
+	+	1822	0
+	+	1820	64
+	+	19	0
+	+	16	19
+	+	1821	72
+	+	1824	0
+	+	1821	75
+	+	1823	2
+	+	1822	1
+	+	1821	9
+	+	16	1
+	+	320	1
+	+	1820	59
+	+	44	0
+	+	17	0
+	+	1484	0
+	+	142	0
+	+	708	11
+	+	652	0
+	+	652	40
+	+	708	0
+	+	685	0
+	+	672	0
+	+	672	7
+	+	652	0
+	+	672	44
+	+	672	0
+	+	1418	59
+
+> ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/NERD_tree_1
+	"	30	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/matroska/MatroskaExtractor.cpp
+	"	699	8
+	^	388	71
+	.	388	70
+	+	377	4
+	+	377	4
+	+	380	53
+	+	377	3
+	+	377	3
+	+	377	0
+	+	377	0
+	+	377	0
+	+	377	0
+	+	146	32
+	+	377	0
+	+	377	0
+	+	377	0
+	+	377	0
+	+	377	53
+	+	377	54
+	+	377	52
+	+	377	0
+	+	377	0
+	+	377	28
+	+	377	47
+	+	377	56
+	+	377	0
+	+	377	60
+	+	377	8
+	+	372	16
+	+	373	8
+	+	372	14
+	+	373	7
+	+	377	0
+	+	377	1
+	+	377	0
+	+	377	4
+	+	377	2
+	+	382	8
+	+	377	56
+	+	377	0
+	+	377	0
+	+	377	1
+	+	377	0
+	+	377	0
+	+	377	56
+	+	377	0
+	+	377	0
+	+	377	0
+	+	377	30
+	+	377	0
+	+	377	1
+	+	377	0
+	+	377	32
+	+	377	12
+	+	377	0
+	+	377	0
+	+	377	0
+	+	377	60
+	+	377	0
+	+	377	12
+	+	377	19
+	+	378	0
+	+	379	0
+	+	396	0
+	+	403	43
+	+	399	0
+	+	418	40
+	+	417	26
+	+	419	13
+	+	420	13
+	+	432	0
+	+	409	34
+	+	436	5
+	+	425	9
+	+	422	0
+	+	423	0
+	+	424	0
+	+	422	13
+	+	423	13
+	+	424	13
+	+	422	17
+	+	423	17
+	+	424	17
+	+	422	17
+	+	423	17
+	+	424	17
+	+	422	24
+	+	423	24
+	+	424	24
+	+	427	34
+	+	427	0
+	+	432	38
+	+	427	13
+	+	427	11
+	+	428	3
+	+	429	16
+	+	396	1
+	+	398	0
+	+	439	5
+	+	387	54
+	+	388	65
+	+	387	59
+	+	388	70
+	k	1	0
+	m	444	33
+	n	51	29
+	p	477	0
+
+> ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/AwesomePlayer.cpp
+	"	474	12
+	^	428	15
+	.	474	12
+	+	1464	0
+	+	1464	0
+	+	503	12
+	+	474	13
+	+	474	0
+	+	17	1
+	+	63	26
+	+	474	12
+	n	503	12
+
+> ~/gitosis/gitosis-admin/.git/COMMIT_EDITMSG
+	"	1	17
+	^	1	18
+	.	1	20
+	+	1	20
+
+> ~/gitosis.conf
+	"	1	0
+
+> ~/.git/COMMIT_EDITMSG
+	"	1	20
+	^	1	21
+	.	1	20
+	+	2	0
+	+	1	20
+
+> ~/examples.desktop
+	"	1	0
+
+> ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/NERD_tree_2
+	"	1	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
 
 > ~/NERD_tree_1
 	"	18	0
@@ -513,15 +958,6 @@ $
 	+	1	0
 	+	1	0
 
-> ~/work/mine/mineS.c
-	"	132	0
-	^	1	4
-	.	1	4
-	+	1	0
-	+	2	0
-	+	10	6
-	+	1	4
-
 > ~/NERD_tree_2
 	"	23	0
 	.	1	0
@@ -589,54 +1025,6 @@ $
 	.	1	1
 	+	1	1
 
-> ~/.vim/plugin/hahhah.vim
-	"	1	0
-	^	36	26
-	.	37	0
-	+	66	0
-	+	67	0
-	+	66	0
-	+	67	32
-	+	18	0
-	+	2	0
-	+	37	6
-	+	37	0
-	+	38	0
-	+	38	0
-	+	36	26
-	+	25	0
-	+	26	0
-	+	27	0
-	+	28	0
-	+	29	0
-	+	30	0
-	+	31	0
-	+	32	0
-	+	33	0
-	+	25	6
-	+	26	7
-	+	27	8
-	+	28	9
-	+	29	10
-	+	30	12
-	+	31	14
-	+	32	16
-	+	33	18
-	+	36	36
-	+	34	0
-	+	35	0
-	+	36	0
-	+	36	26
-	+	36	26
-	+	36	26
-	+	34	20
-	+	35	22
-	+	36	23
-	+	36	26
-	+	36	25
-	+	36	26
-	+	37	0
-
 > ~/205.html
 	"	59	0
 
@@ -699,12 +1087,6 @@ $
 	+	2	0
 	+	74	0
 
-> ~/share/03.21「AVC＿AAC」/10301.txt
-	"	9	0
-
-> ~/share/03.21「AVC＿AAC」/1080.txt
-	"	1	0
-
 > ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/NuCachedSource2.cpp
 	"	17	1
 	^	17	2
@@ -721,38 +1103,6 @@ $
 	+	3	9
 	+	7	7
 	+	10	7
-
-> ~/work/test/[quickrun output]
-	"	1	0
-	^	7	0
-	.	3	0
-	+	1	0
-	+	8	0
-	+	6	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	3	0
 
 > ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/NERD_tree_3
 	"	4	0
@@ -894,111 +1244,6 @@ $
 	+	77	0
 	+	76	54
 
-> ~/gitosis/gitosis-admin/gitosis.conf
-	"	16	0
-	^	32	33
-	.	32	32
-	+	19	0
-	+	19	57
-	+	19	56
-	+	6	14
-	+	13	45
-	+	19	33
-	+	13	6
-	+	13	46
-	+	13	46
-	+	14	0
-	+	19	70
-	+	17	0
-	+	15	11
-	+	18	0
-	+	19	38
-	+	16	1
-	+	20	0
-	+	19	8
-	+	19	48
-	+	19	50
-	+	19	45
-	+	19	44
-	+	19	0
-	+	18	11
-	+	19	9
-	+	19	11
-	+	19	6
-	+	5	36
-	+	19	90
-	+	5	0
-	+	71	0
-	+	19	108
-	+	5	10
-	+	14	15
-	+	19	12
-	+	19	11
-	+	5	10
-	+	5	8
-	+	14	19
-	+	19	0
-	+	31	10
-	+	34	10
-	+	55	0
-	+	57	0
-	+	35	0
-	+	41	11
-	+	45	0
-	+	40	0
-	+	42	0
-	+	55	0
-	+	36	6
-	+	41	11
-	+	34	9
-	+	39	11
-	+	44	11
-	+	54	11
-	+	59	11
-	+	51	17
-	+	56	6
-	+	58	15
-	+	59	12
-	+	60	0
-	+	64	11
-	+	61	7
-	+	63	14
-	+	13	0
-	+	6	0
-	+	11	0
-	+	19	0
-	+	7	23
-	+	12	16
-	+	25	23
-	+	7	11
-	+	45	0
-	+	51	19
-	+	65	0
-	+	66	0
-	+	67	0
-	+	66	6
-	+	67	14
-	+	62	14
-	+	57	14
-	+	68	16
-	+	70	0
-	+	71	0
-	+	52	12
-	+	47	13
-	+	42	13
-	+	37	13
-	+	31	0
-	+	25	24
-	+	26	6
-	+	27	37
-	+	29	10
-	+	32	14
-	+	32	14
-	+	20	9
-	+	32	15
-	+	32	16
-	+	32	32
-
 > ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/Audio
 	"	1	0
 
@@ -1007,115 +1252,6 @@ $
 
 > ~/android/ga500ICS-is2m1/android/v8.log
 	"	64	0
-
-> ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/matroska/MatroskaExtractor.cpp
-	"	134	1
-	^	388	71
-	.	388	70
-	+	377	4
-	+	377	4
-	+	380	53
-	+	377	3
-	+	377	3
-	+	377	0
-	+	377	0
-	+	377	0
-	+	377	0
-	+	146	32
-	+	377	0
-	+	377	0
-	+	377	0
-	+	377	0
-	+	377	53
-	+	377	54
-	+	377	52
-	+	377	0
-	+	377	0
-	+	377	28
-	+	377	47
-	+	377	56
-	+	377	0
-	+	377	60
-	+	377	8
-	+	372	16
-	+	373	8
-	+	372	14
-	+	373	7
-	+	377	0
-	+	377	1
-	+	377	0
-	+	377	4
-	+	377	2
-	+	382	8
-	+	377	56
-	+	377	0
-	+	377	0
-	+	377	1
-	+	377	0
-	+	377	0
-	+	377	56
-	+	377	0
-	+	377	0
-	+	377	0
-	+	377	30
-	+	377	0
-	+	377	1
-	+	377	0
-	+	377	32
-	+	377	12
-	+	377	0
-	+	377	0
-	+	377	0
-	+	377	60
-	+	377	0
-	+	377	12
-	+	377	19
-	+	378	0
-	+	379	0
-	+	396	0
-	+	403	43
-	+	399	0
-	+	418	40
-	+	417	26
-	+	419	13
-	+	420	13
-	+	432	0
-	+	409	34
-	+	436	5
-	+	425	9
-	+	422	0
-	+	423	0
-	+	424	0
-	+	422	13
-	+	423	13
-	+	424	13
-	+	422	17
-	+	423	17
-	+	424	17
-	+	422	17
-	+	423	17
-	+	424	17
-	+	422	24
-	+	423	24
-	+	424	24
-	+	427	34
-	+	427	0
-	+	432	38
-	+	427	13
-	+	427	11
-	+	428	3
-	+	429	16
-	+	396	1
-	+	398	0
-	+	439	5
-	+	387	54
-	+	388	65
-	+	387	59
-	+	388	70
-	k	1	0
-	m	444	33
-	n	51	29
-	p	477	0
 
 > ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/matroska/MatroskaExtractor.
 	"	1	0
@@ -1555,173 +1691,3 @@ $
 	+	13	20
 	+	253	0
 	+	7126	34
-
-> ~/share/temp/media_libstagefright_matroska_MatroskaExtractor.cpp
-	"	186	17
-
-> ~/share/temp/jin/new/MatroskaExtractor.cpp
-	"	586	5
-
-> ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/MP3Extractor.cpp
-	"	54	0
-	^	17	2
-	.	17	1
-	+	319	3
-	+	17	0
-	+	319	10
-	+	17	0
-	+	319	8
-	+	17	0
-	+	316	1
-	+	319	1
-	+	318	23
-	+	331	34
-	+	17	1
-
-> ~/log.txt
-	"	101	0
-
-> ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/matroska/mkvparser.cpp
-	"	17	1
-	^	17	2
-	.	17	1
-	+	17	1
-
-> ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/Android.mk
-	"	117	17
-	.	118	0
-	+	118	0
-
-> ~/android/ga500ICS-is2m1/android/frameworks/base/media/libstagefright/matroska/Android.mk
-	"	1	0
-	^	6	25
-	.	6	24
-	+	6	16
-	+	10	0
-	+	5	32
-	+	6	24
-
-> ~/share/temp/MatroskaExtractor.cpp
-	"	437	0
-	^	407	0
-	.	366	0
-	+	366	0
-
-> ~/share/temp/init.rc
-	"	456	0
-	^	435	44
-	.	1	0
-	+	435	43
-	+	1	0
-
-> ~/share/temp/funai/desc.txt
-	"	2	0
-	^	1	7
-	.	1	6
-	+	22	0
-	+	22	8
-	+	22	0
-	+	2	22
-	+	2	13
-	+	22	0
-	+	3	0
-	+	4	0
-	+	5	0
-	+	6	0
-	+	7	0
-	+	8	0
-	+	9	0
-	+	10	0
-	+	11	0
-	+	12	0
-	+	13	0
-	+	14	0
-	+	15	0
-	+	16	0
-	+	17	0
-	+	18	0
-	+	19	0
-	+	20	0
-	+	21	0
-	+	3	12
-	+	4	13
-	+	5	12
-	+	6	12
-	+	7	12
-	+	8	12
-	+	9	12
-	+	10	12
-	+	11	12
-	+	13	12
-	+	12	12
-	+	13	13
-	+	14	13
-	+	15	14
-	+	16	13
-	+	17	13
-	+	18	13
-	+	19	13
-	+	20	13
-	+	21	13
-	+	21	14
-	+	20	14
-	+	19	14
-	+	18	14
-	+	17	14
-	+	16	14
-	+	15	12
-	+	14	14
-	+	13	14
-	+	1	6
-
-> ~/MatroskaExtractor.cpp
-	"	1	0
-
-> /etc/hostname
-	"	1	5
-	^	1	6
-	.	1	5
-	+	1	5
-
-> /etc/hosts
-	"	2	15
-	^	2	16
-	.	2	15
-	+	2	15
-	+	1	0
-	+	2	15
-
-> ~/AwesomePlayer.cpp
-	"	1	0
-
-> ~/work/MatroskaExtractor.cpp
-	"	744	32
-	.	183	0
-	+	183	0
-
-> ~/work/nMatroskaExtractor.cpp
-	"	15	2
-	^	15	2
-	.	15	0
-	+	15	0
-
-> ~/android/ics/frameworks/base/media/libstagefright/matroska/MatroskaExtractor.cpp
-	"	734	0
-
-> ~/share/kindle/mydroid/frameworks/base/media/libstagefright/matroska/MatroskaExtractor.cpp
-	"	387	0
-
-> ~/adbstagefrightpush.sh
-	"	1	0
-	^	4	125
-	.	4	96
-	+	4	29
-	+	3	37
-	+	4	0
-	+	4	96
-
-> ~/adb_mp3dec_push.sh
-	"	4	0
-
-> codecs/mp3dec/src/pvmp3_decode_header.cpp
-	"	1	0
