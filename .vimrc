@@ -170,6 +170,6 @@ autocmd FileType python map <silent> <c-p> :call <SID>ExecPy()<CR>
 
 "tag jump
 "
-set tags=tags;
+set tags=.tags;
 
 
